@@ -7,15 +7,15 @@ interface AllPropertyProps {
   items: DataProperty,
 }
 
-const PropertyEntry = ({items:{state, price, agency, rooms, baths, area, coverPhoto, slug}}:AllPropertyProps) => {
+const SingleProperty = ({items:{state, price, agency, rooms, baths, area, coverPhoto, slug}}:AllPropertyProps) => {
   
   return (
     <div>
       <img 
         src= {coverPhoto?.url}
-        className=' w-full h-50 md:h-40 object-cover'
+        className=' w-full h-40 cover'
       />
-      <div className=' shadow-lg shadow-gray-300 pt-3 pb-3 p-2 rounded-b dark:shadow-sm dark:shadow-sky-300'>
+      <div className=' dark:shadow-sm dark:shadow-sky-500 shadow-lg shadow-gray-300 pt-3 pb-3 p-2 rounded-b'>
         <div className=' flex items-center justify-between'>
           <div className=' flex items-center justify-center'>
             {
@@ -43,4 +43,4 @@ const PropertyEntry = ({items:{state, price, agency, rooms, baths, area, coverPh
   )
 }
 
-export default PropertyEntry
+export default SingleProperty

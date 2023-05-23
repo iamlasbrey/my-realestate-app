@@ -1,9 +1,15 @@
+import FeaturedDiv from "@/components/FeaturedDiv";
+import Hero from "@/components/Hero";
+import PropertyEntries from "@/components/PropertyEntries";
 import { Property, PropertyResponse } from "@/models/Properties"
 import { GetServerSideProps } from 'next'
-import { Raleway } from 'next/font/google'
+import { Roboto } from 'next/font/google'
+import { useState } from "react";
 
-
-const raleway = Raleway({ subsets: ['latin'] })
+const roboto = Roboto({
+  weight: ['400','500', '700'],
+  subsets: ['latin'],
+})
 
 interface AllPropertyProps {
       MyProperyList : Property[]
@@ -30,9 +36,14 @@ export const getServerSideProps: GetServerSideProps<AllPropertyProps>=async()=>{
 }
 
 export default function Homepage({MyProperyList}:AllPropertyProps) {
+
   return (
-    <main className={raleway.className}>
-      hello
+    <main className= {roboto.className}>
+      <div className=" min-h-screen w-full">
+        <Hero />
+        <FeaturedDiv />
+        <PropertyEntries />
+      </div>
     </main>
   )
 }
