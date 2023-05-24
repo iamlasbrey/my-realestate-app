@@ -10,7 +10,13 @@ export interface Property {
     baths: number,
     isVerified: boolean,
     phoneNumber: object,
-    contactName: string
+    contactName: string,
+    coverPhoto: {url?: string},
+    agency: {
+        logo: {url?: string},
+    },
+    state: boolean,
+    area: number
 }
 
 

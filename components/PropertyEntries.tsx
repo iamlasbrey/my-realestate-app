@@ -1,17 +1,17 @@
-import { HeroData } from '@/Data'
 import PropertyEntry from './PropertyEntry'
-import {useState} from 'react'
+import { Property } from '@/models/Properties'
 
+interface FeaturedProps {
+  propertieslist : Property[]
+}
 
-const PropertyEntries = () => {
-
-  const [properties, setProperties] = useState(HeroData)
+const PropertyEntries = ({propertieslist}:FeaturedProps) => {
 
   return (
     <div className=' grid grid-cols-1 md:grid-cols-3 lg:w-9/12 lg:mx-auto gap-8 md:ml-10 md:mr-10 ml-5 mr-5 mb-10 md:mb-0'>
       {
-        properties.slice(0, 7).map((items)=>(
-          <PropertyEntry items={items} key={items.id}/>
+        propertieslist.slice(0, 6).map((property)=>(
+          <PropertyEntry property={property} key={property.id}/>
         ))
       }
     </div>
