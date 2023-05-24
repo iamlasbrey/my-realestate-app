@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<AllPropertyProps>=async()=>{
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '421c9bdb77msha77d3ac0d0c0205p120d72jsn6a0b5509e991',
+      'X-RapidAPI-Key': `${process.env.API_KEY}`,
       'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
     }
   };
@@ -42,7 +42,7 @@ export default function Homepage({MyProperyList}:AllPropertyProps) {
       <div className=" min-h-screen w-full">
         <Hero />
         <FeaturedDiv />
-        <PropertyEntries />
+        <PropertyEntries propertieslist={MyProperyList} />
       </div>
     </main>
   )

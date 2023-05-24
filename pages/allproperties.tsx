@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next'
 
 
 interface AllPropertyProps {
-    MyProperyList : Property[]
+    properties : Property[]
 }
 
 
@@ -24,11 +24,11 @@ const response = await fetch('https://bayut.p.rapidapi.com/properties/list?locat
 const propertiesResponse:PropertyResponse = await response.json()
 
 return {
-  props: {MyProperyList: propertiesResponse.hits}
+  props: {properties: propertiesResponse.hits}
 }
 }
 
-export default function Properties() {
+export default function Properties({properties}:AllPropertyProps) {
     
 
     return (
@@ -75,7 +75,7 @@ export default function Properties() {
             <h1 className=' mr-8 ml-8 lg:mr-40 lg:ml-40 text-xl font-bold mb-2 dark:text-sky-500 text-center'>
                 Properties For Sale
             </h1>
-            <AllProperties />
+            <AllProperties properties={properties}/>
         </div>
     </>
     )

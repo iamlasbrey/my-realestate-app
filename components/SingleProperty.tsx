@@ -34,7 +34,7 @@ const SingleProperty = ({items:{state, price, agency, rooms, baths, area, coverP
           <div className=' flex items-center text-sm'> <p>{area}</p> <HiSquares2X2 className=' ml-1'/> </div>
         </div>
         <div>
-          <p className=' text-sm'>
+          <p className=' text-sm capitalize'>
             {slug.slice(0, 30)}....
           </p>
         </div>

@@ -4,10 +4,10 @@ import {FaBed, FaBath} from 'react-icons/fa'
 import {HiSquares2X2} from 'react-icons/hi2'
 
 interface AllPropertyProps {
-  items: DataProperty,
+  property: DataProperty,
 }
 
-const PropertyEntry = ({items:{state, price, agency, rooms, baths, area, coverPhoto, slug}}:AllPropertyProps) => {
+const PropertyEntry = ({property:{state, price, agency, rooms, baths, area, coverPhoto, slug}}:AllPropertyProps) => {
   
   return (
     <div>
