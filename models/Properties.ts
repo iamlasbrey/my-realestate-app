@@ -5,6 +5,7 @@ export interface Property {
     purpose: string,
     referenceNumber : string,
     title: string,
+    externalID:string,
     slug: string,
     rooms: number,
     baths: number,
