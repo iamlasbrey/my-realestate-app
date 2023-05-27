@@ -4,7 +4,7 @@ export interface SingleProperty {
     title: string,
     description: string,
     slug: string,
-    externalID:4937770,
+    externalID:string,
     type: string,
     rooms: number,
     baths: number,

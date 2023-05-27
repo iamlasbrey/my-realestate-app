@@ -2,14 +2,17 @@ import { DataProperty } from '@/models/Mydata'
 import {TbDiscountCheckFilled} from 'react-icons/tb'
 import {FaBed, FaBath} from 'react-icons/fa'
 import {HiSquares2X2} from 'react-icons/hi2'
+import { Property } from '@/models/Properties'
+import Link from 'next/link'
 
 interface AllPropertyProps {
-  property: DataProperty,
+  property: Property,
 }
 
-const PropertyEntry = ({property:{state, price, agency, rooms, baths, area, coverPhoto, slug}}:AllPropertyProps) => {
+const PropertyEntry = ({property:{state, price, agency, rooms, baths, area, coverPhoto, slug, externalID}}:AllPropertyProps) => {
   
   return (
+    <Link href={`/propertydetail/${externalID}`}>
     <div>
       <img 
         src= {coverPhoto?.url}
@@ -40,6 +43,7 @@ const PropertyEntry = ({property:{state, price, agency, rooms, baths, area, cove
         </div>
       </div>
     </div>
+    </Link>
   )
 }
 

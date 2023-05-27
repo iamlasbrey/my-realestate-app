@@ -4,7 +4,6 @@ import PropertyEntries from "@/components/PropertyEntries";
 import { Property, PropertyResponse } from "@/models/Properties"
 import { GetServerSideProps } from 'next'
 import { Roboto } from 'next/font/google'
-import { useState } from "react";
 
 const roboto = Roboto({
   weight: ['400','500', '700'],
@@ -27,8 +26,9 @@ export const getServerSideProps: GetServerSideProps<AllPropertyProps>=async()=>{
   };
   
   const response = await fetch('https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002%2C6020&purpose=for-rent&hitsPerPage=25&page=0&lang=en&sort=city-level-score&rentFrequency=monthly&categoryExternalID=4', options)
-
+  
   const propertiesResponse:PropertyResponse = await response.json()
+  
 
   return {
     props: {MyProperyList: propertiesResponse.hits}
