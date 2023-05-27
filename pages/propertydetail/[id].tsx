@@ -106,7 +106,7 @@ export default function Page({propertydetail}:SinglePropertyProps) {
           externalID: id
         },
         headers: {
-          'X-RapidAPI-Key': '421c9bdb77msha77d3ac0d0c0205p120d72jsn6a0b5509e991',
+          'X-RapidAPI-Key': `${process.env.API_KEY}`,
           'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
         }
       };
